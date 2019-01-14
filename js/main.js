@@ -13,7 +13,7 @@ function generateTheme() {
 }
 
 function getColors() {
-    let url = 'https://colormind.io/api/';
+    let url = 'http://colormind.io/api/';
     let data = {
         'model' : 'default'
     };
@@ -22,7 +22,6 @@ function getColors() {
 
    if('withCredentials' in http) {
     http.open("POST", url, true);
-    http.setRequestHeader('Content-Type', 'application/json');
     http.onreadystatechange = function() {
         if(http.status == 200 && http.readyState == 4) {
             let colors = JSON.parse(http.responseText).result;
