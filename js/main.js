@@ -20,8 +20,9 @@ function getColors() {
 
     let http = new XMLHttpRequest();
 
-   console.log(("withCredentials" in http));
-
+   if('withCredentials' in http) {
+    http.open("POST", url, true);
+    http.setRequestHeader('Content-Type', 'application/json');
     http.onreadystatechange = function() {
         if(http.status == 200 && http.readyState == 4) {
             let colors = JSON.parse(http.responseText).result;
@@ -51,8 +52,8 @@ function getColors() {
         }
     }
 
-    http.open("POST", url, true);
     http.send(JSON.stringify(data));
+   }
 }
 
 function rand(arr) {
