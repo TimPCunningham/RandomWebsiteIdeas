@@ -13,12 +13,14 @@ function generateTheme() {
 }
 
 function getColors() {
-    let url = 'http://colormind.io/api/';
+    let url = 'https://colormind.io/api/';
     let data = {
         'model' : 'default'
     };
 
     let http = new XMLHttpRequest();
+
+   console.log(("withCredentials" in http));
 
     http.onreadystatechange = function() {
         if(http.status == 200 && http.readyState == 4) {
