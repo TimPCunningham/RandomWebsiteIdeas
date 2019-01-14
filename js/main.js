@@ -1,14 +1,14 @@
 function generateTheme() {
     var name = rand(firstNames) + ' ' + rand(lastNames);
-    var buisness = rand(businesses);
+    var business = rand(businesses);
     var theme = rand(themes);
 
     document.querySelector('.contract').innerHTML = '';
 
     to( `<div class='detail'><span class='emphasize'>${name}</span> wants you to build them</div>`, 1000);
     to( `<div class='detail'>a <span class='emphasize'>${theme}</span> website for their </div>`, 2000);
-    to( `<div class='detail'><span class='emphasize'>${buisness}</span> buisness</div>`, 3000);
-    to(`<div class='detail'><span class='emphasize'>and wants these colors.</div>`, 4000);
+    to( `<div class='detail'><span class='emphasize'>${business}</span> business</div>`, 3000);
+    to(`<div class='detail'>and wants these colors.</div>`, 4000);
     setTimeout(getColors, 4000);
 }
 
